@@ -62,6 +62,10 @@
   <style scoped>
   #container {
     height: 100vh;
+    background-image: url('../../public/img/background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   .content{
     align-self: center;
@@ -76,7 +80,6 @@
   }
   h3, h1 {
     font-size: 30px;
-    color: #79F2D0;
   }
   
   p {

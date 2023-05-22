@@ -8,10 +8,10 @@
       <v-icon v-else color="#ffffff">mdi-close</v-icon>
     </v-btn>
     <v-spacer></v-spacer>
-    <nav :class="{ 'nav-sm': isMenuOpen }">
-      <v-btn text @click="scrollToSection('#home')">Home</v-btn>
-      <v-btn text @click="scrollToSection('#projetos')">Projetos</v-btn>
-      <v-btn text @click="scrollToSection('#contatos')">Contatos</v-btn>
+    <nav :class="{ 'nav-sm': isMenuOpen } ">
+      <v-btn text @click="scrollToSection('home')">Home</v-btn>
+      <v-btn text @click="scrollToSection('projetos')">Projetos</v-btn>
+      <v-btn text @click="scrollToSection('contato')">Contatos</v-btn>
     </nav>
   </v-app-bar>
 </template>
@@ -26,17 +26,21 @@ export default {
   },
   methods: {
     scroll(refName) {
-      const element = document.querySelector(refName);
+      const element = document.getElementById(refName);
       if (element) {
       window.scrollTo({
         top: element.offsetTop,
         behavior: 'smooth'
       });
-    }
-    this.isMenuOpen = false; // Feche o menu após clicar em um item
+      }
+     this.isMenuOpen = false; // Feche o menu após clicar em um item
     },
     scrollToSection(refName) {
-      this.$emit('navigate-to-section', refName);
+      const element = document.getElementById(refName);
+      window.scrollTo({
+        top:element.offsetTop,
+        behavior: 'smooth'
+      });
       this.toggleMenu();
     },
     toggleMenu() {
@@ -48,12 +52,16 @@ export default {
   
   <style scoped>
   #navbar{
-    background-color: transparent;
+    width: 100%;
+    background-color: #141414;
     position: relative;
     top: 0;
     margin-top: 0;
     margin-right: 80px;
     z-index: 999;
+  }
+  button{
+    transition: ease .4s;
   }
   @media (max-width: 600px) {
     nav {
@@ -62,14 +70,15 @@ export default {
       position: fixed;
       display: flex;
       flex-direction: column;
-      left: 0;
       top: 0;
+      left: 0;
+      bottom: 0;
       align-items: center;
       justify-content: center;
       transform: translateX(-100%);
       transition: .6s ease;
       background-color: #41A8BF;
-      
+      z-index: 9999;
     }
     #navbar{
     
@@ -79,7 +88,7 @@ export default {
     
     #menu {
       position: fixed;
-      right: 0;
+      right: 10px;
     }
     .nav-sm {
       transform: translateX(0);

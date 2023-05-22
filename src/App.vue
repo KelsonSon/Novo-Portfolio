@@ -27,7 +27,6 @@ export default {
 }
 body{
   
-  background-color: #141414;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
