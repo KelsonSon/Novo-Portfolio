@@ -29,7 +29,7 @@
           auto-grow
         ></v-textarea>
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_next" value="http://localhost:8080">
+        <input type="hidden" name="_next" value="https://kelsonson.neocities.org">
         <v-btn  type="submit" class="mr-4">
           Enviar
         </v-btn>
