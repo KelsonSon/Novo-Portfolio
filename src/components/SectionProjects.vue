@@ -87,7 +87,7 @@
               { icon: 'fa-brands fa-vuejs', color: '#1976D2' },
             ],
             image: 'Portfolio-Mini.png',
-            deployLink: 'https://646af1bd4560f30e3256e1a8--poetic-faloodeh-62dafb.netlify.app',
+            deployLink: 'https://kelsonson.neocities.org',
             githubLink: 'https://github.com/KelsonSon/Novo-Portfolio'
           },
           
